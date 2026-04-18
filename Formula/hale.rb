@@ -1,25 +1,25 @@
 class Hale < Formula
   desc "Instant network connection quality monitor"
   homepage "https://github.com/adamatan/hale"
-  version "0.1.30"
+  version "0.1.31"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/adamatan/hale/releases/download/v0.1.30/hale-aarch64-apple-darwin.tar.xz"
-      sha256 "0f770713e679c65f6b7fd84de2df113a3eefa3233e1f334f358e7af3ca026b10"
+      url "https://github.com/adamatan/hale/releases/download/v0.1.31/hale-aarch64-apple-darwin.tar.xz"
+      sha256 "e2e61d4a9e0c2cceb04b9f07f2d1481b24cc81eb9e6cc29d919da099d1bb3d82"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/adamatan/hale/releases/download/v0.1.30/hale-x86_64-apple-darwin.tar.xz"
-      sha256 "2ccda8ecad586be64fa471c8ef51ebd10008b882850409348e39b43f73c5fadc"
+      url "https://github.com/adamatan/hale/releases/download/v0.1.31/hale-x86_64-apple-darwin.tar.xz"
+      sha256 "8648335c55a5ba39066bbff61144a1662d0f998c5cc43e683dd29b56f18fbd45"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/adamatan/hale/releases/download/v0.1.30/hale-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "95579c8fbd407810799e084e8239e5db5d62e9d15cd3b3ffbf396750ba855525"
+      url "https://github.com/adamatan/hale/releases/download/v0.1.31/hale-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "6f36a6bd627137510c6d0728f87243e990c4d206a85d532651c937d329c12e2c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/adamatan/hale/releases/download/v0.1.30/hale-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "31dbb28f077d577c005e178d523eae8f8cae9c486cd0f0ebe772437ac4369295"
+      url "https://github.com/adamatan/hale/releases/download/v0.1.31/hale-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e05c0974ee323785fef519f7907956dc232a4534868919e5bad8b17c7bdf5647"
     end
   end
   license "MIT"
