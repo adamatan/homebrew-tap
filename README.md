@@ -19,11 +19,10 @@ brew install adamatan/tap/<formula>
 
 ## Available formulae
 
-| Tool | Description |
-|---|---|
-| [`hale`](https://github.com/adamatan/hale) | Instant network connection quality monitor |
-
-More tools will be added as they graduate from the [lab monorepo](https://github.com/adamatan/lab).
+| Tool | Version | Description | Install |
+|---|---|---|---|
+| [`hale`](https://github.com/adamatan/hale) | [![crates.io](https://img.shields.io/crates/v/hale?label=&color=informational)](https://crates.io/crates/hale) | Instant network connection quality monitor | `brew install adamatan/tap/hale` |
+| [`dfh`](https://github.com/adamatan/dfh) | [![crates.io](https://img.shields.io/crates/v/dfh?label=&color=informational)](https://crates.io/crates/dfh) | Human-readable disk usage with colorized bars and physical disk grouping | `brew install adamatan/tap/dfh` |
 
 ## How it works
 
