@@ -1,0 +1,58 @@
+name: Channel drift check
+
+# Runs daily and compares each formula's version against crates.io max_version.
+# If any formula lags behind crates.io, the job fails and GitHub emails the
+# admin. Fix by finding the source repo's failing release.yml run and re-running it.
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # 09:00 UTC daily
+  workflow_dispatch:
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare formula versions against crates.io
+        run: |
+          set -u
+          any_drift=0
+          summary=""
+
+          for formula in Formula/*.rb; do
+            name=$(basename "$formula" .rb)
+            brew_version=$(grep -oE 'version "[^"]+"' "$formula" | head -1 | cut -d'"' -f2)
+
+            if [ -z "$brew_version" ]; then
+              echo "WARN: could not parse version from $formula, skipping"
+              continue
+            fi
+
+            http_code=$(curl -s -o /tmp/crates.json -w '%{http_code}' "https://crates.io/api/v1/crates/$name")
+            if [ "$http_code" != "200" ]; then
+              echo "INFO: $name not on crates.io (HTTP $http_code), skipping"
+              continue
+            fi
+
+            crates_version=$(jq -r '.crate.max_stable_version // .crate.max_version // "unknown"' /tmp/crates.json)
+
+            if [ "$brew_version" = "$crates_version" ]; then
+              echo "OK:    $name  brew=$brew_version  crates=$crates_version"
+            else
+              echo "DRIFT: $name  brew=$brew_version  crates=$crates_version"
+              summary="$summary\n- $name: brew=$brew_version, crates.io=$crates_version"
+              any_drift=1
+            fi
+          done
+
+          if [ "$any_drift" = "1" ]; then
+            echo ""
+            echo "::error::Channel drift detected"
+            printf "Formulas lagging behind crates.io:%b\n" "$summary"
+            exit 1
+          fi
+
+          echo ""
+          echo "All formulas in sync with crates.io."
