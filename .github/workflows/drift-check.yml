@@ -30,7 +30,9 @@ jobs:
               continue
             fi
 
-            http_code=$(curl -s -o /tmp/crates.json -w '%{http_code}' "https://crates.io/api/v1/crates/$name")
+            http_code=$(curl -s -o /tmp/crates.json -w '%{http_code}' \
+              -H 'User-Agent: homebrew-tap-drift-check (github.com/adamatan/homebrew-tap)' \
+              "https://crates.io/api/v1/crates/$name")
             if [ "$http_code" != "200" ]; then
               echo "INFO: $name not on crates.io (HTTP $http_code), skipping"
               continue
