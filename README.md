@@ -1,6 +1,8 @@
 # adamatan/homebrew-tap
 
-Homebrew tap for CLI tools by [@adamatan](https://github.com/adamatan).
+[![Channel drift check](https://github.com/adamatan/homebrew-tap/actions/workflows/drift-check.yml/badge.svg)](https://github.com/adamatan/homebrew-tap/actions/workflows/drift-check.yml)
+
+Homebrew tap for CLI tools by [@adamatan](https://github.com/adamatan). Green badge = every formula here matches its crates.io version. Red = at least one formula is lagging behind its source release.
 
 ## Usage
 
