@@ -1,25 +1,25 @@
 class Dfh < Formula
   desc "Human-readable disk usage with colorized bars, physical disk grouping, and system volume annotations"
   homepage "https://github.com/adamatan/dfh"
-  version "0.1.3"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/adamatan/dfh/releases/download/v0.1.3/dfh-aarch64-apple-darwin.tar.xz"
-      sha256 "9f32e7b18a0d5ce0fb949cbb6c09ae6d3011f8971ccb298987a3b44d8523ed07"
+      url "https://github.com/adamatan/dfh/releases/download/v0.1.4/dfh-aarch64-apple-darwin.tar.xz"
+      sha256 "86fd931666698820765e3f73941f5d0a4f2c101ac178a100c87aa0fcf61ea9f3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/adamatan/dfh/releases/download/v0.1.3/dfh-x86_64-apple-darwin.tar.xz"
-      sha256 "68357b661019c3603afe9624929586dee38d648320201eb07831811af6dd7e06"
+      url "https://github.com/adamatan/dfh/releases/download/v0.1.4/dfh-x86_64-apple-darwin.tar.xz"
+      sha256 "c665489ea3a15dcabf7519c5cffbf2049f9451aa08097e2ce2705a4e80230575"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/adamatan/dfh/releases/download/v0.1.3/dfh-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "239ee28c4c77b06b9c35897a1979bea9fc160e7a89bc1e045356d36524de52f0"
+      url "https://github.com/adamatan/dfh/releases/download/v0.1.4/dfh-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e1de7b0f42d732c268f1c37866223ad37dfb2717bce2b8e570ca90f087b262d7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/adamatan/dfh/releases/download/v0.1.3/dfh-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "39784a50487327c6b17111534882f5ee0dc3b8932a3a3e3078dd614482d81056"
+      url "https://github.com/adamatan/dfh/releases/download/v0.1.4/dfh-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "934bf62a202857bc9b50a3a443576a1fcde4ba40db9ec3a28c44110fe8180a5d"
     end
   end
   license "MIT"
