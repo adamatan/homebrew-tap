@@ -100,13 +100,13 @@ Why: GitHub Actions suppresses workflow triggers on pushes made with `GITHUB_TOK
 
 ### 5. Repo secrets
 
-Add these three secrets under Settings → Secrets and variables → Actions:
+Three secrets are required on the source repo (Settings → Secrets and variables → Actions):
 
-| Secret | Source | Scope |
-|---|---|---|
-| `CRATES_IO_TOKEN` | https://crates.io/me | publish scope |
-| `RELEASE_PLZ_TOKEN` | new fine-grained PAT, **per source repo** | `adamatan/<TOOL>`, Contents r/w + Pull requests r/w |
-| `HOMEBREW_TAP_TOKEN` | shared across source repos | `adamatan/homebrew-tap`, Contents r/w |
+- `CRATES_IO_TOKEN` — crates.io publish token
+- `RELEASE_PLZ_TOKEN` — GitHub fine-grained PAT for release-plz
+- `HOMEBREW_TAP_TOKEN` — GitHub fine-grained PAT for cargo-dist to push the formula
+
+For exact scopes, token rotation policy, and the secret-layout rationale, see the private setup notes (out-of-band). Don't publish scope details in public docs, they're attacker reconnaissance shortcuts.
 
 Create PATs at https://github.com/settings/personal-access-tokens/new. Set 1-year expiration, calendar-reminder to rotate.
 
