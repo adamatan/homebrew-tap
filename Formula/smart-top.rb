@@ -1,25 +1,25 @@
 class SmartTop < Formula
   desc "Smart top: a TUI that diagnoses why your computer is slow and names the process responsible."
   homepage "https://github.com/adamatan/smart-top"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/adamatan/smart-top/releases/download/v0.1.0/smart-top-aarch64-apple-darwin.tar.xz"
-      sha256 "1eafe1b7b72e599ae77da4b5d59c213bb3198cb9bdd36d663a1234c4d1bc77fd"
+      url "https://github.com/adamatan/smart-top/releases/download/v0.1.1/smart-top-aarch64-apple-darwin.tar.xz"
+      sha256 "78f3c5a05136c91e818cd4beed8e30182238e73afcdbb7272e04e684f172f9b2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/adamatan/smart-top/releases/download/v0.1.0/smart-top-x86_64-apple-darwin.tar.xz"
-      sha256 "56edb2ce75db4ca0a872c6e9cfbd80bb0ec1805b4630b6d5bece67712a1844e2"
+      url "https://github.com/adamatan/smart-top/releases/download/v0.1.1/smart-top-x86_64-apple-darwin.tar.xz"
+      sha256 "257acf0fc33a3c23d2faad553e1cb8d2a6fd645675f8aa5b660264a38d25bea0"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/adamatan/smart-top/releases/download/v0.1.0/smart-top-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "487dfd63a2dbb911bb3d8570deefd92e67c290d81b620390cc0b56433f8afb9c"
+      url "https://github.com/adamatan/smart-top/releases/download/v0.1.1/smart-top-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "86b518c687ef825dc7f5952be45eb4dd0d72cafe893e992f8ad7575ef6e0fbef"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/adamatan/smart-top/releases/download/v0.1.0/smart-top-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "fa261dcfb2c1416e32e2f9d4a0c561de9eee576aaa9ac0e0633ba01252b61fce"
+      url "https://github.com/adamatan/smart-top/releases/download/v0.1.1/smart-top-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "02de03271c89110cc01049c084a29955762405394ba6930e13aa4562489cb466"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
