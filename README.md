@@ -23,6 +23,7 @@ brew install adamatan/tap/<formula>
 |---|---|---|---|
 | [`hale`](https://github.com/adamatan/hale) | [![crates.io](https://img.shields.io/crates/v/hale?label=&color=informational)](https://crates.io/crates/hale) | Instant network connection quality monitor | `brew install adamatan/tap/hale` |
 | [`dfh`](https://github.com/adamatan/dfh) | [![crates.io](https://img.shields.io/crates/v/dfh?label=&color=informational)](https://crates.io/crates/dfh) | Human-readable disk usage with colorized bars and physical disk grouping | `brew install adamatan/tap/dfh` |
+| [`smart-top`](https://github.com/adamatan/smart-top) | [![crates.io](https://img.shields.io/crates/v/smart-top?label=&color=informational)](https://crates.io/crates/smart-top) | Smart top: a TUI that diagnoses why your computer is slow and names the process responsible (binary: `stop`) | `brew install adamatan/tap/smart-top` |
 
 ---
 
